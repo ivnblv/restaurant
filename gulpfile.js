@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const htmlmin = require("gulp-htmlmin");
 const sass = require("gulp-sass");
 const autoprefixer = require("autoprefixer");
+const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const imagemin = require("gulp-imagemin");
 const browserSync = require("browser-sync").create();
@@ -19,7 +20,8 @@ function compileScss() {
   return gulp
     .src(paths.scss)
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(paths.css))
+    .pipe(postcss([autoprefixer]))
+    .pipe(gulp.dest("src/css"))
     .pipe(browserSync.stream());
 }
 

@@ -1,0 +1,5 @@
+@mixin textTitle($color, $fontSize) {
+  @include text-highlight;
+  color: $color;
+  font-size: $fontSize;
+}

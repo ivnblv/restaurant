@@ -1,0 +1,29 @@
+.specialties {
+  position: relative;
+  margin-top: 690px;
+  background-image: url("../img/specialties/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__content {
+    padding-top: 195px;
+    padding-bottom: 300px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(#000, 0.6);
+    text-align: center;
+  }
+  &__title {
+    @include textTitle($color-light, 297px);
+    font-weight: inherit;
+  }
+  &__span {
+    line-height: 188.33px;
+    display: block;
+  }
+}

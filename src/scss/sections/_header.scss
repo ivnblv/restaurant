@@ -1,6 +1,7 @@
 .header {
   width: 100vw;
   height: 100vh;
+  position: relative;
   background-image: url("../img/header/bg.jpg");
   background-size: cover;
   background-position: center;
@@ -9,16 +10,16 @@
     width: 100%;
     height: 100%;
     background-color: rgba(#000, 0.6);
-    color: $text-light;
+    color: $color-light;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   &__title {
-    font-size: 449px;
-    @include text-highlight;
     font-weight: inherit;
+    @include textTitle($color-light, 449px);
   }
   &__subtitle {
     @include text-semibold;
@@ -28,5 +29,68 @@
   }
   &__span {
     letter-spacing: 6px;
+  }
+}
+.info {
+  max-width: 1649px;
+  max-height: 805px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, 1fr);
+  background-color: $color-light;
+  text-align: center;
+  &__btn {
+    margin-top: 33px;
+    padding: 15px 65px;
+    color: $color-highlight;
+    text-transform: uppercase;
+    font-weight: 500;
+    @include text-regular;
+    background-color: $color-light;
+    font-size: 24px;
+    border: 2px solid #fc4263;
+    border-radius: 4px;
+  }
+  &__span {
+    letter-spacing: 0.6px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--small {
+      padding: 0 93px;
+      padding-bottom: 44px;
+    }
+    &--large {
+      padding: 0 74px;
+      padding-bottom: 94px;
+    }
+  }
+  &__title {
+    @include textTitle($color-highlight, 168px);
+    font-weight: inherit;
+  }
+  &__description {
+    @include text-regular;
+    color: #8a8a8a;
+    font-size: 21px;
+    line-height: 32.44px;
+    &--large {
+      margin-top: 20px;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &--small {
+      background-image: url("../img/header/infoBgSmall.jpg");
+    }
+    &--large {
+      background-image: url("../img/header/infoBgLarge.jpg");
+    }
   }
 }

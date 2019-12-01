@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: $text-light;
+  color: $color-light;
 
   &__links {
     width: 50%;
@@ -31,19 +31,15 @@
       position: absolute;
       right: -45px;
       top: 50%;
-      background-color: #fff;
+      background-color: $color-light;
       width: 6px;
       height: 6px;
       border-radius: 33px;
       transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      -o-transform: translateY(-50%);
     }
   }
   &__link {
-    color: #fff;
+    color: $color-light;
     text-decoration: none;
     @include text-semibold;
     font-size: 24px;
