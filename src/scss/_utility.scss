@@ -4,4 +4,8 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
+  background-color: #fff;
+  box-shadow: 0 6px 11px 1px rgba(0, 0, 0, 0.11);
+  border-radius: 8px;
+  overflow: hidden;
 }

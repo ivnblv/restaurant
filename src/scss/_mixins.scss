@@ -3,3 +3,8 @@
   color: $color;
   font-size: $fontSize;
 }
+@mixin backgroundCover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
