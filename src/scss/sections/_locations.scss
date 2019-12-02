@@ -1,0 +1,81 @@
+.locations {
+  text-align: center;
+  padding: 30px;
+  padding-top: 0;
+  &__title {
+    @include textTitle(#000, 211px);
+    position: relative;
+    margin-top: -30px;
+    &:after {
+      content: "";
+      height: 5px;
+      width: 140px;
+      background-color: $color-highlight;
+      border-radius: 3px;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+    }
+  }
+  &__content {
+    display: flex;
+    width: 100%;
+    color: #878787;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+  &__location {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    &:nth-child(1) {
+      margin-right: 30px;
+    }
+  }
+  &__city {
+    position: relative;
+    display: inline-block;
+    @include text-semibold;
+    text-transform: uppercase;
+    font-weight: inherit;
+    &:before {
+      content: "";
+      height: 30px;
+      width: 21px;
+      background-image: url("../img/locations/location-icon.png");
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__street {
+    @include text-regular;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &__description {
+    display: block;
+  }
+  &__phone {
+    @include text-semibold;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    &:before {
+      content: "";
+      height: 28px;
+      width: 28px;
+      background-image: url("../img/locations/phone-icon.png");
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+}

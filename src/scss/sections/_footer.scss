@@ -1,0 +1,116 @@
+.footer {
+  position: relative;
+  background-color: #272727;
+  color: $color-light;
+  text-align: center;
+  text-transform: uppercase;
+  &__content {
+    position: relative;
+    max-width: 770px;
+    margin: auto;
+    padding: 130px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__social,
+  &__nav,
+  &__contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+  }
+  &__social {
+    width: 80%;
+  }
+  &__nav {
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 40px;
+  }
+  &__nav-link {
+    text-decoration: none;
+    font-size: 24px;
+    @include text-semibold;
+    color: $color-light;
+  }
+  &__contact {
+    width: 80%;
+  }
+  &__contact-item {
+    position: relative;
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+    &:after {
+      content: "";
+      height: 15px;
+      width: 1.5px;
+      background-color: $color-light;
+      position: absolute;
+      top: 50%;
+      right: -40px;
+
+      transform: translateY(-50%);
+      border-radius: 6px;
+    }
+  }
+  &__contact-link {
+    @include text-regular;
+    color: $color-light;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+  }
+}
+.social-link {
+  display: block;
+  position: relative;
+  width: 66px;
+  height: 66px;
+  background-color: $color-light;
+  border-radius: 33px;
+  &__img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.copyright {
+  position: relative;
+  background-color: #000;
+  color: $color-light;
+  text-transform: uppercase;
+  @include text-regular;
+  &__content {
+    max-width: 920px;
+    margin: auto;
+    padding: 40px 0;
+  }
+  &__title {
+    font-size: 26px;
+    font-weight: inherit;
+  }
+  &__img {
+    margin: 0 10px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  &__subtitle {
+    font-size: 20px;
+    font-weight: inherit;
+    margin-top: 20px;
+  }
+}
+.top-link {
+  position: absolute;
+  top: -40px;
+  right: 100px;
+  border: 2px solid $color-light;
+  padding: 15px;
+  border-radius: 33px;
+}

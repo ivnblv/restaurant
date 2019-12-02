@@ -1,0 +1,60 @@
+.signup {
+  width: 100%;
+  background-image: url("../img/signup/bg.jpg");
+  @include backgroundCover;
+  position: relative;
+  &__content {
+    z-index: 10;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 170px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  &__wrapper {
+    max-width: 1254px;
+    margin: 0 auto;
+  }
+  &__cta {
+    @include text-semibold;
+    color: $color-light;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: inherit;
+    text-align: center;
+  }
+  &__form {
+    width: 100%;
+  }
+}
+.signup-form {
+  margin-top: 60px;
+  display: flex;
+  &__email {
+    width: 100%;
+    @include text-regular;
+    font-size: 32px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: rgba($color-light, 0.4);
+    border: none;
+    color: $color-light;
+  }
+  &__btn {
+    margin-left: 45px;
+    display: block;
+    text-transform: uppercase;
+    @include text-semibold;
+    font-size: 28px;
+    color: $color-light;
+    background-color: $color-highlight;
+    padding: 25px 70px;
+    border: none;
+    border-radius: 6px;
+  }
+}

@@ -2,7 +2,7 @@
   max-height: 95px;
   width: 100%;
   padding: 0 56px;
-  padding-top: 20px;
+  padding-top: 40px;
   z-index: 100;
   position: absolute;
   top: 0;
@@ -48,9 +48,6 @@
   }
 }
 .logo {
-  height: 100%;
-  &__img {
-    height: auto;
-    width: 100%;
-  }
+  @include textTitle($color-light, 158px);
+  margin-top: -40px;
 }
