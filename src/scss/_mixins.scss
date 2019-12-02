@@ -2,6 +2,7 @@
   @include text-highlight;
   color: $color;
   font-size: $fontSize;
+  font-weight: inherit;
 }
 @mixin backgroundCover {
   background-size: cover;

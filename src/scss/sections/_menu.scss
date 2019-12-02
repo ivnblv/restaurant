@@ -1,0 +1,175 @@
+.menu {
+  position: relative;
+  background-color: $color-light;
+  background-image: url("../img/menu/bg.svg");
+  padding-bottom: 385px;
+  @include backgroundCover;
+  background-position-x: -160px;
+  &:before {
+    content: "";
+    background-image: url("../img/menu/pizza.png");
+    @include backgroundCover;
+    z-index: 150;
+    position: absolute;
+    top: -150px;
+    left: -230px;
+    min-height: 463px;
+    min-width: 557px;
+  }
+  &:after {
+    content: "";
+    background-image: url("../img/menu/spices.png");
+    @include backgroundCover;
+    z-index: 50;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 320px;
+    width: 330px;
+  }
+  &__title {
+    @include textTitle(#000, 210px);
+    position: relative;
+    text-align: center;
+    &:after {
+      content: "";
+      height: 3px;
+      background-color: $color-highlight;
+      width: 138px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+  }
+  &__category {
+    max-width: 1502px;
+    margin: auto;
+    overflow: hidden;
+    &:before,
+    &:after {
+      @include backgroundCover;
+      z-index: 150;
+    }
+    &:nth-of-type(1) {
+      &:before {
+        content: "";
+        background-image: url("../img/menu/onions.png");
+        height: 408px;
+        width: 332px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -140px;
+      }
+      &:after {
+        content: "";
+        background-image: url("../img/menu/sushi.png");
+        height: 312px;
+        width: 166px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -20px;
+      }
+    }
+    &:nth-of-type(2) {
+      &:before {
+        content: "";
+        background-image: url("../img/menu/steak.png");
+        background-position-y: -20px;
+        background-size: cover;
+        height: 450px;
+        width: 550px;
+        position: absolute;
+        bottom: 0;
+        left: -250px;
+      }
+      &:after {
+        content: "";
+        background-image: url("../img/menu/salmon.png");
+        height: 372px;
+        width: 340px;
+        position: absolute;
+        bottom: 0;
+        right: -60px;
+      }
+    }
+  }
+  &__type {
+    margin-top: 65px;
+    color: #878787;
+    text-transform: uppercase;
+    @include text-semibold;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    &:before {
+      content: "";
+      background-image: url("../img/menu/salad.png");
+      @include backgroundCover;
+      height: 361px;
+      width: 395px;
+      position: absolute;
+      top: 0;
+      right: -80px;
+      z-index: 50;
+    }
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 100px;
+    grid-row-gap: 30px;
+    margin-top: 65px;
+  }
+  &__item {
+    display: flex;
+    width: 100%;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    max-width: 485px;
+  }
+
+  &__name {
+    @include text-semibold;
+    color: #000;
+    font-weight: inherit;
+    text-transform: uppercase;
+    font-size: 27px;
+  }
+  &__description {
+    @include text-regular;
+    position: relative;
+    color: #393939;
+    font-size: 18px;
+    margin-top: 5px;
+    // letter-spacing: 0.24px;
+    &:after {
+      content: "";
+      height: 1px;
+      border-bottom: 1px solid #393939;
+      width: 37%;
+      position: absolute;
+      margin-left: 10px;
+      bottom: 5px;
+    }
+  }
+  &__price {
+    @include text-semibold;
+    position: relative;
+    color: $color-highlight;
+    font-size: 85px;
+    letter-spacing: 0.24px;
+    margin-left: 10px;
+  }
+  &__currency {
+    font-size: 50px;
+    position: relative;
+    top: -20px;
+  }
+}
