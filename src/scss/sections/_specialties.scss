@@ -3,13 +3,12 @@
   position: relative;
   background-image: url("../img/specialties/bg.jpg");
   @include backgroundCover;
-
   &__content {
     position: relative;
     z-index: 10;
     max-height: inherit;
-    padding-top: 195px;
-    padding-bottom: 300px;
+    padding-top: 10rem;
+    padding-bottom: 15rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -18,11 +17,20 @@
     text-align: center;
   }
   &__title {
-    @include textTitle($color-light, 297px);
+    @include textTitle($color-light, 15rem);
     font-weight: inherit;
+    @media (max-width: $screen-xl) {
+      font-size: 10rem;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 6rem;
+    }
   }
   &__span {
     line-height: 188.33px;
     display: block;
+    @media (max-width: $screen-xl) {
+      line-height: 0.5;
+    }
   }
 }

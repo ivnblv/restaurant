@@ -5,7 +5,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  @media (max-width: $screen-xl) {
+    font-size: 18px;
+  }
+}
 body {
   font-weight: 400;
   background-color: #f6f4f1;

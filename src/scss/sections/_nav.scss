@@ -1,8 +1,8 @@
 .nav {
-  max-height: 95px;
+  max-height: 4.7rem;
   width: 100%;
-  padding: 0 56px;
-  padding-top: 40px;
+  padding: 0 2.8rem;
+  margin-top: 1rem;
   z-index: 100;
   position: absolute;
   top: 0;
@@ -11,43 +11,118 @@
   align-items: center;
   justify-content: space-between;
   color: $color-light;
-
+  @media (max-width: $screen-lg) {
+    position: fixed;
+    margin-top: 0;
+    background-color: rgba(#000, 0.7);
+  }
+  @media (max-width: $screen-xs) {
+    padding: 0 0.5rem;
+  }
   &__links {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    list-style: none;
+    list-style-type: none;
+    @media (max-width: $screen-lg) {
+      display: none;
+    }
   }
   &__list-item {
     position: relative;
+    text-align: center;
     &:last-of-type {
       &:after {
         display: none;
       }
     }
-    &:after {
-      content: "";
-      position: absolute;
-      right: -45px;
-      top: 50%;
-      background-color: $color-light;
-      width: 6px;
-      height: 6px;
-      border-radius: 33px;
-      transform: translateY(-50%);
-    }
   }
   &__link {
-    color: $color-light;
     text-decoration: none;
-    @include text-semibold;
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
+    @include titleSemibold($color-light, 1.2rem);
+    @media (max-width: $screen-lg) {
+      font-size: 1rem;
+    }
   }
 }
 .logo {
-  @include textTitle($color-light, 158px);
-  margin-top: -40px;
+  @include textTitle($color-light, 8rem);
+  margin-top: -1.5rem;
+  @media (max-width: $screen-lg) {
+    font-size: 6rem;
+  }
+  @media (max-width: $screen-xs) {
+    font-size: 4.5rem;
+    margin-top: -1rem;
+  }
+}
+.nav-menu {
+  display: none;
+  height: 100%;
+  @media (max-width: $screen-lg) {
+    display: block;
+  }
+  &__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: $color-highlight;
+    transition: height 1s;
+    transition-delay: visibility 1s;
+
+    &--open {
+      height: 100vh;
+    }
+  }
+  &__list-item {
+    margin-bottom: 1rem;
+  }
+  &__link {
+    @include titleSemibold($color-light, 1.5rem);
+    text-decoration: none;
+  }
+  &__icon {
+    position: relative;
+    z-index: 150;
+    width: 50px;
+    height: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  &__line {
+    z-index: 150;
+    height: 3px;
+    width: 40px;
+    background-color: $color-light;
+    transition: transform 0.5s;
+  }
+  &__line--open {
+    &:nth-child(1) {
+      transform: rotate(135deg);
+      position: absolute;
+      bottom: 7px;
+    }
+    &:nth-child(2) {
+      display: none;
+    }
+    &:nth-child(3) {
+      transform: rotate(-135deg);
+      position: absolute;
+      bottom: 7px;
+    }
+  }
 }

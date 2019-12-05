@@ -1,13 +1,23 @@
 .highlight {
-  min-height: 710px;
+  min-height: 690px;
   width: 100%;
   position: relative;
+  @media (max-width: $screen-xl) {
+    min-height: 650px;
+  }
+  @media (max-width: $screen-lg) {
+    min-height: auto;
+    padding: 2rem 0;
+    position: static;
+  }
+  @media (max-width: $screen-xs) {
+    padding: 1rem 0;
+  }
 }
 .highlight__content {
   width: 90%;
   position: absolute;
   top: -50px;
-
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
@@ -15,6 +25,21 @@
   box-shadow: 0 6px 11px 1px rgba(0, 0, 0, 0.11);
   border-radius: 8px;
   overflow: hidden;
+  @media (max-width: $screen-lg) {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: auto;
+  }
+  @media (max-width: $screen-sm) {
+    width: 95%;
+  }
+}
+.link {
+  transition: color 0.1s ease-in;
+  &:hover {
+    color: $color-highlight;
+  }
 }
 .overlay {
   width: 100%;

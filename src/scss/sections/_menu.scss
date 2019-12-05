@@ -4,17 +4,30 @@
   background-image: url("../img/menu/bg.svg");
   padding-bottom: 385px;
   @include backgroundCover;
-  background-position-x: -160px;
+  @media (max-width: $screen-xl) {
+    width: auto;
+  }
+  @media (max-width: $screen-sm) {
+    padding-bottom: 150px;
+  }
   &:before {
     content: "";
     background-image: url("../img/menu/pizza.png");
     @include backgroundCover;
-    z-index: 150;
+    z-index: 50;
     position: absolute;
     top: -150px;
     left: -230px;
-    min-height: 463px;
-    min-width: 557px;
+    height: 463px;
+    width: 557px;
+    @media (max-width: $screen-xl) {
+      height: 370px;
+      width: 455px;
+      top: -100px;
+    }
+    @media (max-width: $screen-sm) {
+      display: none;
+    }
   }
   &:after {
     content: "";
@@ -27,11 +40,32 @@
     transform: translateX(-50%);
     height: 320px;
     width: 330px;
+    @media (max-width: $screen-xl) {
+      height: 200px;
+      width: 210px;
+      bottom: 70px;
+    }
+    @media (max-width: $screen-lg) {
+      bottom: 0;
+    }
+    @media (max-width: $screen-sm) {
+      height: 150px;
+      width: 160px;
+      left: 0;
+      bottom: 0;
+      transform: none;
+    }
   }
   &__title {
-    @include textTitle(#000, 210px);
+    @include textTitle(#000, 10.5rem);
     position: relative;
     text-align: center;
+    @media (max-width: $screen-lg) {
+      font-size: 8rem;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 5rem;
+    }
     &:after {
       content: "";
       height: 3px;
@@ -48,10 +82,16 @@
     max-width: 1502px;
     margin: auto;
     overflow: hidden;
+    @media (max-width: $screen-lg) {
+      max-width: 1200px;
+    }
+    @media (max-width: $screen-md) {
+      max-width: 950px;
+    }
     &:before,
     &:after {
       @include backgroundCover;
-      z-index: 150;
+      z-index: 50;
     }
     &:nth-of-type(1) {
       &:before {
@@ -63,6 +103,9 @@
         top: 50%;
         transform: translateY(-50%);
         left: -140px;
+        @media (max-width: $screen-xl) {
+          display: none;
+        }
       }
       &:after {
         content: "";
@@ -73,6 +116,9 @@
         top: 50%;
         transform: translateY(-50%);
         right: -20px;
+        @media (max-width: $screen-xl) {
+          display: none;
+        }
       }
     }
     &:nth-of-type(2) {
@@ -86,6 +132,16 @@
         position: absolute;
         bottom: 0;
         left: -250px;
+        @media (max-width: $screen-xl) {
+          height: 350px;
+          width: 450px;
+          left: -200px;
+          bottom: 0;
+          z-index: 1;
+        }
+        @media (max-width: $screen-sm) {
+          display: none;
+        }
       }
       &:after {
         content: "";
@@ -95,17 +151,19 @@
         position: absolute;
         bottom: 0;
         right: -60px;
+        @media (max-width: $screen-sm) {
+          display: none;
+        }
       }
     }
   }
   &__type {
-    margin-top: 65px;
-    color: #878787;
-    text-transform: uppercase;
-    @include text-semibold;
-    font-size: 30px;
-    font-weight: 400;
+    margin-top: 3.2rem;
     text-align: center;
+    @include titleSemibold(#878787, 1.5rem);
+    @media (max-width: $screen-xs) {
+      font-size: 1.2rem;
+    }
     &:before {
       content: "";
       background-image: url("../img/menu/salad.png");
@@ -115,39 +173,78 @@
       position: absolute;
       top: 0;
       right: -80px;
-      z-index: 50;
+      z-index: 5;
+      @media (max-width: $screen-xl) {
+        height: 250px;
+        width: 270px;
+      }
+      @media (max-width: $screen-sm) {
+        height: 180px;
+        width: 200px;
+      }
+      @media (max-width: $screen-xs) {
+        font-size: 1.2rem;
+        height: 80px;
+        width: 100px;
+        right: 0;
+      }
     }
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 100px;
-    grid-row-gap: 30px;
-    margin-top: 65px;
+    grid-column-gap: 5rem;
+    grid-row-gap: 1.5rem;
+    margin-top: 3rem;
+    @media (max-width: $screen-lg) {
+      grid-row-gap: 2rem;
+    }
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
   &__item {
     display: flex;
+    align-items: center;
     width: 100%;
+    @media (max-width: $screen-sm) {
+      width: 80%;
+      justify-content: space-between;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(#878787, 0.4);
+    }
+    @media (max-width: $screen-xs) {
+      width: 95%;
+      flex-direction: column;
+    }
   }
   &__text {
     display: flex;
     flex-direction: column;
     max-width: 485px;
+    @media (max-width: $screen-xs) {
+      text-align: center;
+    }
   }
-
   &__name {
-    @include text-semibold;
-    color: #000;
-    font-weight: inherit;
-    text-transform: uppercase;
-    font-size: 27px;
+    @include titleSemibold(#000, 1.3rem);
+    @media (max-width: $screen-lg) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: $screen-md) {
+      font-size: 1.1rem;
+    }
   }
   &__description {
     @include text-regular;
     position: relative;
     color: #393939;
-    font-size: 18px;
-    margin-top: 5px;
+    font-size: 1;
+    margin-top: 0.4rem;
+    @media (max-width: $screen-lg) {
+      line-height: 1.5;
+    }
     &:after {
       content: "";
       height: 1px;
@@ -156,18 +253,44 @@
       position: absolute;
       margin-left: 10px;
       bottom: 5px;
+      @media (max-width: $screen-lg) {
+        display: none;
+      }
     }
   }
   &__price {
-    @include text-semibold;
     position: relative;
-    color: $color-highlight;
-    font-size: 85px;
     letter-spacing: 0.24px;
+    @include titleSemibold($color-highlight, 4.2rem);
+    @media (max-width: $screen-lg) {
+      font-size: 3rem;
+    }
+    @media (max-width: $screen-md) {
+      font-size: 2rem;
+      align-self: start;
+    }
+    @media (max-width: $screen-sm) {
+      align-self: center;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
   }
   &__currency {
-    font-size: 50px;
+    font-size: 2.5rem;
     position: relative;
     top: -20px;
+    @media (max-width: $screen-lg) {
+      position: static;
+      margin-right: 0.5rem;
+    }
+    @media (max-width: $screen-lg) {
+      font-size: 1.8rem;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 1.1rem;
+      margin-right: 0.1rem;
+    }
   }
 }

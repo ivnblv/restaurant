@@ -4,9 +4,8 @@
   position: relative;
   background-image: url("../img/header/bg.jpg");
   @include backgroundCover;
-
   &__content {
-    padding-bottom: 60px;
+    padding-bottom: 3rem;
     z-index: 10;
     position: relative;
     width: 100%;
@@ -17,16 +16,31 @@
     justify-content: center;
     align-items: center;
   }
-
   &__title {
     font-weight: inherit;
-    @include textTitle($color-light, 449px);
+    @include textTitle($color-light, 22rem);
+    @media (max-width: $screen-xl) {
+      font-size: 15rem;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: 13rem;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 9rem;
+    }
   }
   &__subtitle {
-    @include text-semibold;
-    font-size: 93px;
-    text-transform: uppercase;
-    font-weight: inherit;
+    @include titleSemibold(inherit, 5rem);
+    @media (max-width: $screen-xl) {
+      font-size: 3rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: 2rem;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 1rem;
+    }
   }
   &__span {
     letter-spacing: 6px;

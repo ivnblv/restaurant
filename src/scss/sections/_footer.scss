@@ -8,10 +8,13 @@
     position: relative;
     max-width: 770px;
     margin: auto;
-    padding: 130px 0;
+    padding: 6.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: $screen-sm) {
+      padding: 3rem 0;
+    }
   }
   &__social,
   &__nav,
@@ -24,23 +27,55 @@
   }
   &__social {
     width: 80%;
+    @media (max-width: $screen-md) {
+      width: 60%;
+    }
+    @media (max-width: $screen-xs) {
+      width: 80%;
+    }
   }
   &__nav {
     width: 100%;
-    margin-top: 45px;
-    margin-bottom: 40px;
+    margin-top: 2.25rem;
+    margin-bottom: 2rem;
+    @media (max-width: $screen-lg) {
+      margin: 3rem 0;
+    }
+    @media (max-width: $screen-md) {
+      width: 80%;
+    }
+    @media (max-width: $screen-xs) {
+      display: none;
+    }
   }
   &__nav-link {
     text-decoration: none;
-    font-size: 24px;
-    @include text-semibold;
-    color: $color-light;
+    @include titleSemibold($color-light, 1.2rem);
+    @media (max-width: $screen-lg) {
+      font-size: 1.1rem;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: 1rem;
+    }
   }
   &__contact {
     width: 80%;
+    @media (max-width: $screen-md) {
+      width: 70%;
+    }
+    @media (max-width: $screen-xs) {
+      width: 95%;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
   }
   &__contact-item {
     position: relative;
+    width: 25%;
+    text-align: center;
+    @media (max-width: $screen-xs) {
+      padding: 0.5rem 0;
+    }
     &:last-child {
       &:after {
         display: none;
@@ -53,16 +88,18 @@
       background-color: $color-light;
       position: absolute;
       top: 50%;
-      right: -40px;
-
+      right: 0;
       transform: translateY(-50%);
       border-radius: 6px;
+      @media (max-width: $screen-xs) {
+        display: none;
+      }
     }
   }
   &__contact-link {
     @include text-regular;
     color: $color-light;
-    font-size: 20px;
+    font-size: 0.9rem;
     text-decoration: none;
     position: relative;
   }
@@ -74,10 +111,24 @@
   height: 66px;
   background-color: $color-light;
   border-radius: 33px;
+  transition: border 0.1s;
+  border: 1px solid transparent;
+  &:hover {
+    border: 3px solid $color-highlight;
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.75);
+  }
+  @media (max-width: $screen-md) {
+    width: 50px;
+    height: 50px;
+  }
   &__img {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    @media (max-width: $screen-md) {
+      height: 60%;
+      width: auto;
+    }
   }
 }
 .copyright {
@@ -92,8 +143,15 @@
     padding: 40px 0;
   }
   &__title {
-    font-size: 26px;
+    font-size: 1.3rem;
     font-weight: inherit;
+    @media (max-width: $screen-lg) {
+      font-size: 1rem;
+    }
+    @media (max-width: $screen-xs) {
+      font-size: 0.9rem;
+      line-height: 2;
+    }
   }
   &__img {
     margin: 0 10px;
@@ -101,9 +159,12 @@
     display: inline-block;
   }
   &__subtitle {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: inherit;
-    margin-top: 20px;
+    margin-top: 1rem;
+    @media (max-width: $screen-xs) {
+      font-size: 0.8rem;
+    }
   }
 }
 .top-link {
@@ -113,4 +174,7 @@
   border: 2px solid $color-light;
   padding: 15px;
   border-radius: 33px;
+  @media (max-width: $screen-md) {
+    right: 35px;
+  }
 }

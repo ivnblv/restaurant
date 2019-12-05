@@ -1,7 +1,14 @@
 .image-section {
   position: relative;
-  min-height: 100vh;
+  height: 0;
+  padding-top: 58%;
   width: 100%;
   background-image: url("../img/imageSection/bg.jpg");
   @include backgroundCover;
+  @media (max-width: $screen-md) {
+    background-size: cover;
+  }
+  @media (max-width: $screen-sm) {
+    display: none;
+  }
 }

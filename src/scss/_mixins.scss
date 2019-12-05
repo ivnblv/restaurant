@@ -4,8 +4,20 @@
   font-size: $fontSize;
   font-weight: inherit;
 }
+@mixin titleSemibold($color, $fontSize) {
+  @include text-semibold;
+  color: $color;
+  font-size: $fontSize;
+  font-weight: inherit;
+  text-transform: uppercase;
+}
 @mixin backgroundCover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+@mixin media($size) {
+  @media (max-width: $size) {
+    @content;
+  }
 }
